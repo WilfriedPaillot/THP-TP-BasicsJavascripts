@@ -4,17 +4,500 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/boostrap_customized.css">
+  <link rel="stylesheet" href="assets/css/prism/prism.css">
   <title>Projets : JavaScript - Exercices basiques</title>
 </head>
 <body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">Basics Javascript</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Scripts list
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#Hello_you">Hello you</a></li>
+              <li><a class="dropdown-item" href="#Factorial">Factorial</a></li>
+              <li><a class="dropdown-item" href="#Pyramids">Pyramids</a></li>
+              <li><a class="dropdown-item" href="#StartUp_Nation">StartUp Nation</a></li>
+              <li><a class="dropdown-item" href="#Bibliothécaire">Bibliothécaire</a></li>
+              <li><a class="dropdown-item" href="#ARN_decoder">ARN decoder</a></li>
+              <li><a class="dropdown-item" href="#Acne-bot">Acne-bot</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <div class="row my-5" id="Hello_you">
+      <div class="col-6">
+        <h2 class="fs-4">Script hello_firstName.js</h2>
+          <p class="p-5">
+            Fais un script qui demandera le prénom avec un prompt. 
+            Tu stockeras cette entrée dans une variable et tu afficheras : "Bonjour, prénom !" dans la console.
+          </p>
+      </div>
+      <div class="col-6">
+        <pre class="p-5 border">
+          <code class="language-js line-numbers">
+          firstName = prompt("Quel est votre nom ?");
+          console.log("Bonjour, " + firstName + " !");
+          </code>
+        </pre>
+      </div>
+    </div>
+
+    <div class="row my-5" id="Factorial">
+      <div class="col-6">
+        <h2 class="fs-4">Script_2.js</h2>
+        <p class="p-5">
+          Créé un script script_2.js qui définira la fonction factorielle et qui calculera la factorielle du nombre entré par l'utilisateur. 
+          Petit exemple rapide : factorielle(5) = 5*4*3*2*1 et factorielle(10) = 10*9*8*7*6*5*4*3*2*1
+        </p>
+      </div>
+      <div class="col-6">
+        <pre class="p-5 border">
+          <code class="language-js line-numbers">
+            number = prompt("Quel est le nombre dont vous voulez calculer la factorielle?");
+
+            if (number < 0) {
+                console.log("Le nombre doit être positif");
+            } else if (number == 0) {
+                console.log("Le résultat est 1");
+            } else {
+                result = 1;
+                for (i = 1; i <= number; i++) {
+                    result = result * i;
+                }
+                console.log("Le résultat est " + result);
+            }
+          </code>
+        </pre>
+      </div>
+    </div>
+
+    <div class="row my-5" id="Pyramids">
+      <h2 class="fs-4">Script_3.js</h2>
+        <p class="p-5">
+          Ah la pyramide de Mario du pré-parcours. Que de bons souvenirs. Tu vas écrire un script appelé script_3.js
+          <br>
+          Voici ce que devra afficher la console :
+        </p>
+      <div class="col-6">
+        <pre class="p-5 border">
+          <code class="language-js line-numbers">
+            // Résultat attendu pour une saisie de 5 :
+                 #
+                ##
+               ###
+              ####
+             #####
+          </code>
+        </pre>
+
+
+      </div>
+      <div class="col-6">
+        <pre class="p-5 border">
+          <code class="language-js line-numbers">
+            stairs = prompt("Salut et bienvenue moussaillon ! \n\n Je suis le script batisseur, combien d'étages veux-tu pour ta prochaine pyramide? ");
+
+            for (i = stairs; i >= 0; i--) {
+                console.log(" ".repeat(i) + "#".repeat(stairs - i));
+            }
+          </code>
+        </pre>
+      </div>
+    </div>
+
+    <div class="row my-5" id="StartUp_Nation">
+      <h2 class="fs-4">Script_4.js</h2>
+        <p class="p-5">
+          Tu es en train d'écrire un livre sur les entrepreneurs américains et tu te renseignes sur leurs dates de naissance pour voir si tu ne peux pas identifier un millésime à succès.
+          Pendant ta recherche tu tombes sur une array contenant des entrepreneurs connus et leurs dates de naissance.
+        </p>
+      <div class="col-6">
+        <pre class="p-5 border">
+          <code class="language-js line-numbers">
+            var entrepreneurs = [
+              { first: 'Steve', last: 'Jobs', year: 1955 },
+              { first: 'Oprah', last: 'Winfrey', year: 1954 },
+              { first: 'Bill', last: 'Gates', year: 1955 },
+              { first: 'Sheryl', last: 'Sandberg', year: 1969 },
+              { first: 'Mark', last: 'Zuckerberg', year: 1984 },
+              { first: 'Beyonce', last: 'Knowles', year: 1981 },
+              { first: 'Jeff', last: 'Bezos', year: 1964 },
+              { first: 'Diane', last: 'Hendricks', year: 1947 },
+              { first: 'Elon', last: 'Musk', year: 1971 },
+              { first: 'Marissa', last: 'Mayer', year: 1975 },
+              { first: 'Walt', last: 'Disney', year: 1901 },
+              { first: 'Larry', last: 'Page', year: 1973 },
+              { first: 'Jack', last: 'Dorsey', year: 1976 },
+              { first: 'Evan', last: 'Spiegel', year: 1990 },
+              { first: 'Brian', last: 'Chesky', year: 1981 },
+              { first: 'Travis', last: 'Kalanick', year: 1976 },
+              { first: 'Marc', last: 'Andreessen', year: 1971 },
+              { first: 'Peter', last: 'Thiel', year: 1967 }
+            ];
+          </code>
+        </pre>
+      </div>
+      <div class="col-6">
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Filtre dans cette liste les entrepreneurs qui sont nés dans les années 70
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body p-0">
+                  <pre>
+                    <code class="language-js line-numbers">
+                      console.log("Entrepreneurs nés dans les années 70 :");
+                      bornAfter70 = entrepreneurs.filter(function (entrepreneur) {
+                          console.log(entrepreneur.year > 1970 ? entrepreneur.first + " " + entrepreneur.last : "" );
+                      });
+                    </code>
+                  </pre>         
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Sort une array qui contient le prénom et le nom des entrepreneurs
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body p-0">
+                <pre>
+                  <code class="language-js line-numbers">
+                  console.log("Prénoms et noms des entrepreneurs :");
+                  output = entrepreneurs.map(function (entrepreneur) {
+                      console.log(entrepreneur.first + " " + entrepreneur.last);
+                  });
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Quel âge aurait chaque inventeur aujourd'hui ?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body p-0">
+                <pre>
+                  <code class="language-js line-numbers">
+                    const actualYear = (new Date()).getFullYear();
+                    console.log("Age des entrepreneurs :");
+                    output = entrepreneurs.map(function (entrepreneur) {
+                        console.log(entrepreneur.first + " " + entrepreneur.last + " aurait " + (actualYear - entrepreneur.year) + " ans aujourd'hui");
+                    });                  
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Trie les entrepreneurs par ordre alphabétique du nom de famille
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+              <div class="accordion-body p-0">
+                <pre>
+                  <code class="language-js line-numbers">
+                    console.log("Entrepreneurs par ordre alphabétique du nom de famille :");
+                    output = entrepreneurs.sort((a, b) => a.last.localeCompare(b.last));
+                    for (let index = 0; index < output.length; index++) {
+                        console.log(output[index].first + " " + output[index].last);
+                    }                 
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row my-5" id="Bibliothécaire">
+      <h2 class="fs-4">Script_5.js</h2>
+      <p class="p-5">
+        C'est ton premier jour de stage au CDI du collège du coin. 
+        Tu dois aider la bibliothécaire à faire des statistiques dans la base de données de livres du collège et 
+        elle te donne ce jeu de données pour que tu maitrises le back-office du programme.
+      </p>
+      <div class="col-6">
+        <pre class="p-5 border">
+          <code class="language-js line-numbers">
+            const books = [
+              { title: 'Gatsby le magnifique', id: 133712, rented: 39 },
+              { title: 'A la recherche du temps,perdu', id: 237634, rented: 28 },
+              { title: 'Orgueil & Préjugés', id: 873495, rented: 67 },
+              { title: 'Les frères Karamazov', id: 450911, rented: 55 },
+              { title: 'Dans les forêts de Sibérie', id: 8376365, rented: 15 },
+              { title: 'Pourquoi j\'ai mangé mon père', id: 450911, rented: 45 },
+              { title: 'Et on tuera tous les affreux', id: 67565, rented: 36 },
+              { title: 'Le meilleur des mondes', id: 88847, rented: 58 },
+              { title: 'La disparition', id: 364445, rented: 33 },
+              { title: 'La lune seule le sait', id: 63541, rented: 43 },
+              { title: 'Voyage au centre de la Terre', id: 4656388, rented: 38 },
+              { title: 'Guerre et Paix', id: 748147, rented: 19 }
+            ];
+          </code>
+        </pre>
+      </div>
+      <div class="col-6">
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Est-ce que tous les livres ont été au moins empruntés une fois ?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body p-0">
+                  <pre>
+                    <code class="language-js line-numbers">
+                      books.every(book => book.rented > 0) ? console.log('Tous les livres ont été au moins empruntés une fois') : console.log('Certaines références n\'ont pas été empruntées');
+                    </code>
+                  </pre>         
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Quel est livre le plus/moins emprunté ?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body p-0">
+                <pre>
+                  <code class="language-js line-numbers">
+                    sortedBooksByRented = books.sort((a, b) => a.rented - b.rented);
+
+                    console.log("Livre le plus emprunté :");
+                    console.log(sortedBooksByRented[sortedBooksByRented.length - 1].title);
+                    
+                    console.log("Livre le moins emprunté :");
+                    console.log(sortedBooksByRented[0].title);
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Trouve le livre avec l'ID: 873495
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body p-0">
+                <pre>
+                  <code class="language-js line-numbers">
+                    console.log("Livre avec l'ID: 873495 :");
+                    console.log(books.find(book => book.id === 873495));                 
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Supprime le livre avec l'ID: 133712
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+              <div class="accordion-body p-0">
+                <pre>
+                  <code class="language-js line-numbers">
+                    console.log("Suppression du livre avec l'ID: 133712 :");
+                    cleanedListOfBooks = books.filter(book => book.id !== 133712);              
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                Trie les livres par ordre alphabétique (sans celui avec l'ID 133712 car il est supprimé)
+              </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+              <div class="accordion-body p-0">
+                <pre>
+                  <code class="language-js line-numbers">
+                    console.log("Liste des livres triée par ordre alphabétique (sans celui avec l'ID 133712 car il est supprimé) :");
+                    newBooksList = cleanedListOfBooks.sort((a, b) => a.title.localeCompare(b.title));
+                    for (let index = 0; index < newBooksList.length; index++) {
+                      console.log(newBooksList[index].title);
+                    }            
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row my-5" id="ARN_decoder">
+      <h2 class="fs-4">Script_6.js</h2>
+      <p class="pt-5">
+        L'un des premiers codes dont tu as entendu parler est probablement le code génétique qui permet de traduire de l'ARN (c'est une copie de notre ADN) en protéines (qui constituent notre corps). 
+        Pourquoi ne pas faire un exercice là-dessus ?
+      <br>
+      D'abord quelques explications (on va pas te faire un cours de bio complet). Pour simplifier, l'ARN (comme l'ADN) est une suite de molécules appelées nucléotides et qu'on peut représenter par 4 lettres : A - U - G - C (pour l'ADN, remplacer U par T). 
+      Donc un morceau d'ARN peut se représenter sous la forme d'une suite de lettres : "UUACGCAGUAGA".
+      <br>
+      Notre corps est ensuite capable de lire cet ARN en le découpant par groupes de 3 lettres (appelés "codons"). 
+      Dans notre exemple ça donnerait : "UUA-CGC-AGU-AGA". 
+      Ensuite chaque codon peut être transformé en un "acide aminé" qui est juste un "morceau de protéine". 
+      Mais quelle est la règle qui dit que tel codon doit être remplacé par tel acide aminé ? C'est le fameux code génétique dont voici un extrait ci-dessous :
+      </p>
+
+        <ul class="px-5 ms-3">
+          <li>UCU ou UCC ou UCA ou UCG ou AGU ou AGC => Sérine</li>
+          <li>CCU ou CCC ou CCA ou CCG => Proline</li>
+          <li>UUA ou UUG => Leucine</li>
+          <li>UUU ou UUC => Phénylalanine</li>
+          <li>CGU ou CGC ou CGA ou CGG ou AGA ou AGG => Arginine</li>
+          <li>UAU ou UAC => Tyrosine</li>
+        </ul>
+
+      <p class="pb-5">
+        Le code génétique complet permet de transformer les 64 codons possibles en 20 acides aminés. 
+        On va se contenter, sur cet exercice, de prendre juste les 6 acides aminés ci-dessus avec leurs codons correspondants.
+      <br>
+        Je veux que tu codes un script script_6.js en JS qui puisse transformer un ARN présenté sous forme de string "UUACGCAGUAGA" en une suite d'acides aminés que tu imprimeras en console : 
+        "Leucine-Arginine-Sérine-Arginine"
+      </p>
+      <div class="col-6">
+        <pre class="p-5 border">
+          <code class="language-js line-numbers">
+            const codons = [
+            { name: 'Sérine', codons: ['UCU', 'UCC', 'UCA', 'UCG', 'AGU', 'AGC'] },
+            { name: 'Proline', codons: ['CCU', 'CCC', 'CCA', 'CCG'] },
+            { name: 'Leucine', codons: ['UUA', 'UUG'] },
+            { name: 'Phénylalanine', codons: ['UUU', 'UUC'] },
+            { name: 'Arginine', codons: ['CGU', 'CGC', 'CGA', 'CGG', 'AGA', 'AGG'] },
+            { name: 'Tyrosine', codons: ['UAU', 'UAC'] }
+          ]
+          </code>
+        </pre>
+      </div>
+      <div class="col-6">
+        <pre>
+          <code class="language-js line-numbers">
+            input = prompt("Entrez votre séquence d'ARN");
+            output = [];
+                      
+            var splited = input.match(/.{1,3}/g);
+            splited.forEach(codon => {
+              codons.forEach(element => {
+                if (element.codons.includes(codon)) {
+                  output.push(element.name);
+                }
+              });
+            });
+            console.log(output.join('-'));
+          </code>
+        </pre>         
+      </div>
+    </div>
+
+    <div class="row my-5" id="Acne-bot">
+      <h2 class="fs-4">Script_7.js</h2>
+      <div class="col-6">
+        <p class="p-5">
+          Coder un script qui va fonctionner de la façon suivante : pour s'adresser au bot, un fenêtre de prompt va s'ouvrir.
+          L'utilisateur pourra y saisir sa phrase et le bot répondra via une impression en console.
+        <br>
+          Les règles de conversations du bot sont les suivantes (rangées par priorité - si deux règles sont vraies, seule la plus haute dans la liste s'applique) :
+          <ul>
+            <li>Si on lui pose une question (= la phrase finie par "?"), le bot répond "Ouais Ouais..." ;</li>
+            <li>Si on lui hurle trop dessus (= la phrase est 100% en majuscules), le bot répond "Pwa, calme-toi..."</li>
+            <li>Si la phrase que tu prononces contient le mot "Fortnite", le bot répond "on s' fait une partie soum-soum ?"</li>
+            <li>Si on lui envoie un message vide, le bot répond "t'es en PLS ?"</li>
+            <li>Pour tout autre phrase que tu lui envoies, le bot répond "balek."</li>
+          </ul>
+          La sortie sera une chaîne de caractères affichée dans la console
+        </p>
+      </div>
+      <div class="col-6">
+        <pre class="p-5 border">
+          <code class="language-js line-numbers">
+            let input = prompt("Entrez votre phrase");
+            
+            switch (true) {
+              case input === '' :
+                console.log("t'es en PLS ?");
+                break;
+                case input.toUpperCase() === input :
+                  console.log("Pwa, calme-toi...");
+                  break;
+                case input.includes('Fortnite') :
+                  console.log("on s' fait une partie soum-soum ?");
+                  break;
+                case input.endsWith('?'):
+                  console.log("Ouais Ouais...");
+                  break;
+                default :
+                  console.log("balek.");
+            }
+          </code>
+        </pre>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p>&copy; 2019 - Wilfried PAILLOT</p>
+        </div>
+        <div class="col">
+          <p class="text-center">With <i class="bi bi-heart"></i> by Wilfried PAILLOT</p>
+        </div>
+        <div class="col">
+          <p class="text-end">
+            <a href="thehackingproject.com">The Hacking Project</a>
+          </p>
+        </div>
+  </footer>
   
-  <!-- <script src="hello.js"></script> -->
-  <!-- <script src="hello_firstName.js"></script> -->
-  <!-- <script src="script_2.js"></script> -->
-  <!-- <script src="script_3.js"></script> -->
-  <!-- <script src="script_4.js"></script> -->
-  <!-- <script src="script_5.js"></script> -->
-  <!-- <script src="script_6.js"></script> -->
-  <!-- <script src="script_7.js"></script> -->
-</body>
+  <!-- <script src="assets/js/hello.js"></script> -->
+  <!-- <script src="assets/js/hello_firstName.js"></script> -->
+  <!-- <script src="assets/js/script_2.js"></script> -->
+  <!-- <script src="assets/js/script_3.js"></script> -->
+  <!-- <script src="assets/js/script_4.js"></script> -->
+  <!-- <script src="assets/js/script_5.js"></script> -->
+  <!-- <script src="assets/js/script_6.js"></script> -->
+  <!-- <script src="assets/js/script_7.js"></script> -->
+  <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/prism/prism.js"></script>
+  </body>
 </html>
