@@ -1,0 +1,32 @@
+@import "../../node_modules/bootstrap/scss/_functions.scss";
+@import "../../node_modules/bootstrap/scss/_mixins.scss";
+@import "../../node_modules/bootstrap/scss/_variables.scss";
+
+// $body-bg : #fff;
+// $body-color: #333;
+
+    //declare somes custom colors variables
+    $dark-blue: rgba(0, 2, 34,1);
+    
+    //create custom colors map for merge and add in :root
+    $new-colors: (
+    "dark-blue": $dark-blue
+    );
+
+    $theme-colors: map-merge($theme-colors, $new-colors);
+    // Since 5.1.0 you must add the following to add the new colors to the mixin and benefits 
+    // of the new colors utilities (--bs-text-opacity)
+    $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+    $utilities-colors: map-merge($utilities-colors, $theme-colors-rgb);
+    $utilities-text-colors: map-loop($utilities-colors, rgba-css-var, "$key", "text");
+    $utilities-bg-colors: map-loop($utilities-colors, rgba-css-var, "$key", "bg");
+
+// Activate unable functions
+$enable-negative-margins: true;
+$enable-shadows: true;
+
+// Rewrite variables url for icons
+$bootstrap-icons-font-src: url("../fonts/bootstrap-icons.woff2?a74547b2f0863226942ff8ded57db345") format("woff2"),
+url("../fonts/bootstrap-icons.woff?a74547b2f0863226942ff8ded57db345") format("woff") !default;
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
