@@ -6,11 +6,17 @@
 // $body-color: #333;
 
     //declare somes custom colors variables
-    $dark-blue: rgba(0, 2, 34,1);
+    $term_green: rgba(166, 226, 46, 1);
+    $term_yellow: rgba(230, 219, 116, 1);
+    $term_pink: rgba(249, 38, 114, 1);
+    $term_blue: rgba(102, 217, 239, 1);
     
     //create custom colors map for merge and add in :root
     $new-colors: (
-    "dark-blue": $dark-blue
+    "term_green": $term_green,
+    "term_yellow": $term_yellow,
+    "term_pink": $term_pink,
+    "term_blue": $term_blue
     );
 
     $theme-colors: map-merge($theme-colors, $new-colors);
@@ -24,6 +30,12 @@
 // Activate unable functions
 $enable-negative-margins: true;
 $enable-shadows: true;
+
+$accordion-button-active-bg: #333;
+$accordion-button-active-color: $term_yellow;
+$accordion-button-active-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$term_yellow}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+$accordion-button-focus-box-shadow: none;
+
 
 // Rewrite variables url for icons
 $bootstrap-icons-font-src: url("../fonts/bootstrap-icons.woff2?a74547b2f0863226942ff8ded57db345") format("woff2"),

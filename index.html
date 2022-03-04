@@ -10,20 +10,20 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="#">Basics Javascript</a>
+      <a class="navbar-brand text-term_green fs-1" href="/">Basics Javascript</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav mx-5">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="#">Accueil</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Scripts list
+              Scripts
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item" href="#Hello_you">Hello you</a></li>
@@ -41,15 +41,17 @@
   </nav>
 
   <main class="container py-5">
+
+    <!-- script 1 -->
     <div class="row my-5" id="Hello_you">
-      <div class="col-6">
-        <h2 class="fs-4">Script hello_firstName.js</h2>
+      <div class="col-lg-6">
+        <h2 class="fs-3">Script hello_firstName.js</h2>
           <p class="p-5">
             Fais un script qui demandera le prénom avec un prompt. 
             Tu stockeras cette entrée dans une variable et tu afficheras : "Bonjour, prénom !" dans la console.
           </p>
       </div>
-      <div class="col-6">
+      <div class="col-lg-6 my-auto">
         <pre class="p-5 border">
           <code class="language-js line-numbers">
           firstName = prompt("Quel est votre nom ?");
@@ -59,15 +61,18 @@
       </div>
     </div>
 
+    <hr>
+
+    <!-- script 2 -->
     <div class="row my-5" id="Factorial">
-      <div class="col-6">
-        <h2 class="fs-4">Script_2.js</h2>
+      <div class="col-lg-6">
+        <h2 class="fs-3">Script_2.js</h2>
         <p class="p-5">
           Créé un script script_2.js qui définira la fonction factorielle et qui calculera la factorielle du nombre entré par l'utilisateur. 
           Petit exemple rapide : factorielle(5) = 5*4*3*2*1 et factorielle(10) = 10*9*8*7*6*5*4*3*2*1
         </p>
       </div>
-      <div class="col-6">
+      <div class="col-lg-6">
         <pre class="p-5 border">
           <code class="language-js line-numbers">
             number = prompt("Quel est le nombre dont vous voulez calculer la factorielle?");
@@ -88,14 +93,17 @@
       </div>
     </div>
 
+    <hr>
+
+    <!-- script 3 -->
     <div class="row my-5" id="Pyramids">
-      <h2 class="fs-4">Script_3.js</h2>
+      <h2 class="fs-3">Script_3.js</h2>
         <p class="p-5">
           Ah la pyramide de Mario du pré-parcours. Que de bons souvenirs. Tu vas écrire un script appelé script_3.js
           <br>
           Voici ce que devra afficher la console :
         </p>
-      <div class="col-6">
+      <div class="col-lg-6">
         <pre class="p-5 border">
           <code class="language-js line-numbers">
             // Résultat attendu pour une saisie de 5 :
@@ -109,7 +117,7 @@
 
 
       </div>
-      <div class="col-6">
+      <div class="col-lg-6">
         <pre class="p-5 border">
           <code class="language-js line-numbers">
             stairs = prompt("Salut et bienvenue moussaillon ! \n\n Je suis le script batisseur, combien d'étages veux-tu pour ta prochaine pyramide? ");
@@ -122,13 +130,16 @@
       </div>
     </div>
 
+    <hr>
+
+    <!-- script 4 -->
     <div class="row my-5" id="StartUp_Nation">
-      <h2 class="fs-4">Script_4.js</h2>
+      <h2 class="fs-3">Script_4.js</h2>
         <p class="p-5">
           Tu es en train d'écrire un livre sur les entrepreneurs américains et tu te renseignes sur leurs dates de naissance pour voir si tu ne peux pas identifier un millésime à succès.
           Pendant ta recherche tu tombes sur une array contenant des entrepreneurs connus et leurs dates de naissance.
         </p>
-      <div class="col-6">
+      <div class="col-lg-6">
         <pre class="p-5 border">
           <code class="language-js line-numbers">
             var entrepreneurs = [
@@ -154,7 +165,7 @@
           </code>
         </pre>
       </div>
-      <div class="col-6">
+      <div class="col-lg-6">
         <div class="accordion" id="accordionExample">
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
@@ -238,14 +249,17 @@
       </div>
     </div>
 
+    <hr>
+
+    <!-- script 5 -->
     <div class="row my-5" id="Bibliothécaire">
-      <h2 class="fs-4">Script_5.js</h2>
+      <h2 class="fs-3">Script_5.js</h2>
       <p class="p-5">
         C'est ton premier jour de stage au CDI du collège du coin. 
         Tu dois aider la bibliothécaire à faire des statistiques dans la base de données de livres du collège et 
         elle te donne ce jeu de données pour que tu maitrises le back-office du programme.
       </p>
-      <div class="col-6">
+      <div class="col-lg-6">
         <pre class="p-5 border">
           <code class="language-js line-numbers">
             const books = [
@@ -265,15 +279,15 @@
           </code>
         </pre>
       </div>
-      <div class="col-6">
-        <div class="accordion" id="accordionExample">
+      <div class="col-lg-6">
+        <div class="accordion" id="accordionExample2">
           <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <h2 class="accordion-header" id="headingOneOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneOne" aria-expanded="true" aria-controls="collapseOneOne">
                 Est-ce que tous les livres ont été au moins empruntés une fois ?
               </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div id="collapseOneOne" class="accordion-collapse collapse show" aria-labelledby="headingOneOne" data-bs-parent="#accordionExample2">
               <div class="accordion-body p-0">
                   <pre>
                     <code class="language-js line-numbers">
@@ -284,12 +298,12 @@
             </div>
           </div>
           <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <h2 class="accordion-header" id="headingTwoTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoTwo" aria-expanded="false" aria-controls="collapseTwoTwo">
                 Quel est livre le plus/moins emprunté ?
               </button>
             </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div id="collapseTwoTwo" class="accordion-collapse collapse" aria-labelledby="headingTwoTwo" data-bs-parent="#accordionExample2">
               <div class="accordion-body p-0">
                 <pre>
                   <code class="language-js line-numbers">
@@ -306,12 +320,12 @@
             </div>
           </div>
           <div class="accordion-item">
-            <h2 class="accordion-header" id="headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <h2 class="accordion-header" id="headingThreeThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThreeThree" aria-expanded="false" aria-controls="collapseThreeThree">
                 Trouve le livre avec l'ID: 873495
               </button>
             </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div id="collapseThreeThree" class="accordion-collapse collapse" aria-labelledby="headingThreeThree" data-bs-parent="#accordionExample2">
               <div class="accordion-body p-0">
                 <pre>
                   <code class="language-js line-numbers">
@@ -323,12 +337,12 @@
             </div>
           </div>
           <div class="accordion-item">
-            <h2 class="accordion-header" id="headingFour">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            <h2 class="accordion-header" id="headingFourFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourFour" aria-expanded="false" aria-controls="collapseFourFour">
                 Supprime le livre avec l'ID: 133712
               </button>
             </h2>
-            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+            <div id="collapseFourFour" class="accordion-collapse collapse" aria-labelledby="headingFourFour" data-bs-parent="#accordionExample2">
               <div class="accordion-body p-0">
                 <pre>
                   <code class="language-js line-numbers">
@@ -345,7 +359,7 @@
                 Trie les livres par ordre alphabétique (sans celui avec l'ID 133712 car il est supprimé)
               </button>
             </h2>
-            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample2">
               <div class="accordion-body p-0">
                 <pre>
                   <code class="language-js line-numbers">
@@ -363,8 +377,11 @@
       </div>
     </div>
 
+    <hr>
+
+    <!-- script 6 -->
     <div class="row my-5" id="ARN_decoder">
-      <h2 class="fs-4">Script_6.js</h2>
+      <h2 class="fs-3">Script_6.js</h2>
       <p class="pt-5">
         L'un des premiers codes dont tu as entendu parler est probablement le code génétique qui permet de traduire de l'ARN (c'est une copie de notre ADN) en protéines (qui constituent notre corps). 
         Pourquoi ne pas faire un exercice là-dessus ?
@@ -394,7 +411,7 @@
         Je veux que tu codes un script script_6.js en JS qui puisse transformer un ARN présenté sous forme de string "UUACGCAGUAGA" en une suite d'acides aminés que tu imprimeras en console : 
         "Leucine-Arginine-Sérine-Arginine"
       </p>
-      <div class="col-6">
+      <div class="col-lg-6">
         <pre class="p-5 border">
           <code class="language-js line-numbers">
             const codons = [
@@ -408,7 +425,7 @@
           </code>
         </pre>
       </div>
-      <div class="col-6">
+      <div class="col-lg-6">
         <pre>
           <code class="language-js line-numbers">
             input = prompt("Entrez votre séquence d'ARN");
@@ -428,25 +445,31 @@
       </div>
     </div>
 
+    <hr>
+
+    <!-- script 7 -->
     <div class="row my-5" id="Acne-bot">
-      <h2 class="fs-4">Script_7.js</h2>
-      <div class="col-6">
-        <p class="p-5">
+      <h2 class="fs-3">Script_7.js</h2>
+      <div class="col-lg-6">
+        <p class="pt-5">
           Coder un script qui va fonctionner de la façon suivante : pour s'adresser au bot, un fenêtre de prompt va s'ouvrir.
           L'utilisateur pourra y saisir sa phrase et le bot répondra via une impression en console.
         <br>
           Les règles de conversations du bot sont les suivantes (rangées par priorité - si deux règles sont vraies, seule la plus haute dans la liste s'applique) :
-          <ul>
+        </p>
+          <ul class="px-5 ms-3">
             <li>Si on lui pose une question (= la phrase finie par "?"), le bot répond "Ouais Ouais..." ;</li>
             <li>Si on lui hurle trop dessus (= la phrase est 100% en majuscules), le bot répond "Pwa, calme-toi..."</li>
             <li>Si la phrase que tu prononces contient le mot "Fortnite", le bot répond "on s' fait une partie soum-soum ?"</li>
             <li>Si on lui envoie un message vide, le bot répond "t'es en PLS ?"</li>
             <li>Pour tout autre phrase que tu lui envoies, le bot répond "balek."</li>
           </ul>
-          La sortie sera une chaîne de caractères affichée dans la console
-        </p>
+          <p >
+            La sortie sera une chaîne de caractères affichée dans la console
+          </p>
+        
       </div>
-      <div class="col-6">
+      <div class="col-lg-6">
         <pre class="p-5 border">
           <code class="language-js line-numbers">
             let input = prompt("Entrez votre phrase");
@@ -473,19 +496,21 @@
     </div>
   </main>
 
-  <footer>
+  <button type="button" class="btn btn-dark btn-floating btn-lg border border-term_green" id="btn-back-to-top">
+    <i class="bi bi-arrow-up-circle text-term_green"></i>
+  </button>
+
+  <footer class="bg-dark">
     <div class="container">
       <div class="row">
         <div class="col">
-          <p>&copy; 2019 - Wilfried PAILLOT</p>
+          <p class="text-term_blue">&copy; 2022</p>
         </div>
         <div class="col">
-          <p class="text-center">With <i class="bi bi-heart"></i> by Wilfried PAILLOT</p>
+          <p class="text-center"><a href="https://www.linkedin.com/in/wilfried-paillot/" target="_blank">With <i class="bi bi-heart text-term_pink"></i> by Wilfried PAILLOT</a></p>
         </div>
         <div class="col">
-          <p class="text-end">
-            <a href="thehackingproject.com">The Hacking Project</a>
-          </p>
+          <p class="text-end">The Hacking Project</p>
         </div>
   </footer>
   
@@ -499,5 +524,6 @@
   <!-- <script src="assets/js/script_7.js"></script> -->
   <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
   <script src="assets/js/prism/prism.js"></script>
+  <script src="assets/js/back_to_top/backToTopBottom.js"></script>
   </body>
 </html>
